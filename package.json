@@ -1,0 +1,34 @@
+{
+	"name": "preact-bundling",
+	"version": "0.0.1",
+	"description": "A repo containing samples of bundling Preact in using various bundlers",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/andrewiggins/preact-bundling.git"
+	},
+	"keywords": [
+		"preact",
+		"rollup",
+		"webpack",
+		"parcel",
+		"vite",
+		"rspack"
+	],
+	"authors": [
+		"The Preact Authors (https://github.com/preactjs/signals/contributors)"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/andrewiggins/preact-bundling/issues"
+	},
+	"homepage": "https://github.com/andrewiggins/preact-bundling#readme",
+	"workspaces": [
+		"bundlers/*"
+	],
+	"volta": {
+		"node": "18.18.0"
+	}
+}

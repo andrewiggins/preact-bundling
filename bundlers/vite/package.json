@@ -1,7 +1,8 @@
 {
-  "name": "example",
+  "name": "preact-bundling-vite",
   "private": true,
   "type": "module",
+  "description": "A Preact app built with Vite, using `npm create preact`",
   "scripts": {
     "start": "vite",
     "dev": "vite",

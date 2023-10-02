@@ -1,0 +1,14 @@
+{
+  "name": "preact-bundling-tests",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.test.js",
+  "description": "Tests for the preact-bundling projects",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "puppeteer": "^21.3.6"
+  }
+}

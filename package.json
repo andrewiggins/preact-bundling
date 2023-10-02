@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "A repo containing samples of bundling Preact in using various bundlers",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build -ws --if-present",
+    "test": "node --test tests",
+    "test:debug": "cross-env DEBUG=1 node --test tests"
   },
   "repository": {
     "type": "git",
@@ -26,9 +28,13 @@
   },
   "homepage": "https://github.com/andrewiggins/preact-bundling#readme",
   "workspaces": [
-    "projects/*"
+    "projects/*",
+    "tests"
   ],
   "volta": {
     "node": "18.18.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }

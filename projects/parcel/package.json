@@ -1,0 +1,22 @@
+{
+  "name": "parcel",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Preact app built with Parcel",
+  "browserslist": "last 2 Chrome versions, last 2 Safari versions, last 2 Firefox versions",
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "serve": "sirv dist"
+  },
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  },
+  "dependencies": {
+    "preact": "^10.18.1"
+  }
+}

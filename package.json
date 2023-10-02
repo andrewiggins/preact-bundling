@@ -31,10 +31,13 @@
     "projects/*",
     "tests"
   ],
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  },
   "volta": {
     "node": "18.18.0"
   },
-  "devDependencies": {
-    "cross-env": "^7.0.3"
+  "@parcel/resolver-default": {
+    "packageExports": true
   }
 }

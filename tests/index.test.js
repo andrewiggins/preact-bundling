@@ -54,4 +54,10 @@ describe("bundling projects", () => {
 		const url = pathToFileURL(p("projects/rollup/dist/index.html"));
 		await runTest(url);
 	});
+
+	it("parcel works", async () => {
+		const url = pathToFileURL(p("projects/rollup/dist/index.html"));
+		// TODO: Run parcel server
+		await runTest(url);
+	});
 });

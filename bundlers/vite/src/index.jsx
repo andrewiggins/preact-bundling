@@ -1,6 +1,7 @@
-import { render } from 'preact';
-import preactLogo from './assets/preact.svg';
-import './style.css';
+import { render } from "preact";
+import Counter from "./Counter.jsx";
+import preactLogo from "./assets/preact.svg";
+import "./style.css";
 
 export function App() {
 	return (
@@ -8,6 +9,7 @@ export function App() {
 			<a href="https://preactjs.com" target="_blank">
 				<img src={preactLogo} alt="Preact logo" height="160" width="160" />
 			</a>
+			<Counter />
 			<h1>Get Started building Vite-powered Preact Apps </h1>
 			<section>
 				<Resource
@@ -39,4 +41,4 @@ function Resource(props) {
 	);
 }
 
-render(<App />, document.getElementById('app'));
+render(<App />, document.getElementById("app"));

@@ -1,6 +1,7 @@
 import babel from "@rollup/plugin-babel";
 import html, { makeHtmlAttributes } from "@rollup/plugin-html";
 import nodeResolve from "@rollup/plugin-node-resolve";
+import terser from "@rollup/plugin-terser";
 
 function htmlTemplate({ attributes, files, meta, publicPath, title }) {
 	const scripts = (files.js || [])
@@ -43,6 +44,7 @@ export default {
 	output: {
 		file: "dist/bundle.js",
 		format: "iife",
+		plugins: [terser()],
 	},
 	plugins: [
 		nodeResolve(),

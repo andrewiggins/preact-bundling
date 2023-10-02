@@ -1,13 +1,12 @@
 {
-  "name": "preact-bundling-vite",
-  "private": true,
+  "name": "vite",
   "type": "module",
+  "private": true,
   "description": "A Preact app built with Vite, using `npm create preact`",
   "scripts": {
     "start": "vite",
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "serve": "vite preview"
   },
   "dependencies": {
     "preact": "^10.13.1"

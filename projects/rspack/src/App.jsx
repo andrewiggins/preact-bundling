@@ -1,6 +1,7 @@
 import { useState } from "preact/hooks";
 import reactLogo from "./assets/preact.svg";
 import "./App.css";
+import CompatCounter from "./CompatCounter.jsx";
 
 function App() {
 	const [count, setCount] = useState(0);
@@ -18,6 +19,7 @@ function App() {
 					<span id="bundler">Rspack</span> count is{" "}
 					<span id="count">{count}</span>
 				</button>
+				<CompatCounter />
 				<p>
 					Edit <code>src/App.jsx</code> and save to test HMR
 				</p>

@@ -8,6 +8,10 @@
   "@parcel/resolver-default": {
     "packageExports": true
   },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom": "preact/compat"
+  },
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",

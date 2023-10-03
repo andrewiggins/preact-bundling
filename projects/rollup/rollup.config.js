@@ -1,3 +1,4 @@
+import alias from "@rollup/plugin-alias";
 import babel from "@rollup/plugin-babel";
 import html, { makeHtmlAttributes } from "@rollup/plugin-html";
 import nodeResolve from "@rollup/plugin-node-resolve";
@@ -47,6 +48,18 @@ export default {
 		plugins: [terser()],
 	},
 	plugins: [
+		alias({
+			entries: [
+				{
+					find: "react",
+					replacement: "preact/compat",
+				},
+				{
+					find: "react-dom",
+					replacement: "preact/compat",
+				},
+			],
+		}),
 		nodeResolve(),
 		babel({ babelHelpers: "bundled" }),
 		html({

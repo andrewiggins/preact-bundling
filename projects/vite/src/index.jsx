@@ -1,6 +1,7 @@
 import { render } from "preact";
-import Counter from "./Counter.jsx";
 import preactLogo from "./assets/preact.svg";
+import CompatCounter from "./CompatCounter.jsx";
+import Counter from "./Counter.jsx";
 import "./style.css";
 
 export function App() {
@@ -10,6 +11,7 @@ export function App() {
 				<img src={preactLogo} alt="Preact logo" height="160" width="160" />
 			</a>
 			<Counter />
+			<CompatCounter />
 			<h1>Get Started building Vite-powered Preact Apps </h1>
 			<section>
 				<Resource

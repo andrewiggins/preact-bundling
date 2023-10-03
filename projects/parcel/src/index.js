@@ -1,5 +1,6 @@
 import { render } from "preact";
 import { useState } from "preact/hooks";
+import CompatCounter from "./compat.js";
 
 function Counter() {
 	const [count, setCount] = useState(0);
@@ -15,4 +16,13 @@ function Counter() {
 	);
 }
 
-render(<Counter />, document.getElementById("root"));
+function App() {
+	return (
+		<>
+			<Counter />
+			<CompatCounter />
+		</>
+	);
+}
+
+render(<App />, document.getElementById("root"));

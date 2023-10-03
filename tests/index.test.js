@@ -10,7 +10,6 @@ const DEBUG = process.env.DEBUG === "true" || process.env.DEBUG === "1";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const p = (...args) => path.join(__dirname, "..", ...args);
 const urlRegex = /http:\/\/localhost:\d+\/?/;
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 describe("bundling projects", () => {
 	/** @type {import('puppeteer').Browser} */
@@ -102,18 +101,29 @@ describe("bundling projects", () => {
 
 	/** @type {(framework: string, url: string) => Promise<void>} */
 	async function runTest(framework, url = "http://localhost:8080") {
+		async function _runTestImpl(compat = false) {
+			const prefix = compat ? "compat-" : "";
+			const bundlerId = `#${prefix}bundler`;
+			const countId = `#${prefix}count`;
+			const incrementId = `#${prefix}increment`;
+			const expectedFramework = `${prefix}${framework}`;
+
+			await page.waitForSelector(bundlerId);
+			let actualFramework = await page.$eval(bundlerId, (el) => el.textContent);
+			assert.equal(actualFramework, expectedFramework);
+
+			let count = await page.$eval(countId, (el) => el.textContent);
+			assert.equal(count, "0");
+
+			await page.click(incrementId);
+
+			count = await page.$eval(countId, (el) => el.textContent);
+			assert.equal(count, "1");
+		}
+
 		await page.goto(url);
-		await page.waitForSelector("#bundler");
-		let actualFramework = await page.$eval("#bundler", (el) => el.textContent);
-		assert.equal(actualFramework, framework);
-
-		let count = await page.$eval("#count", (el) => el.textContent);
-		assert.equal(count, "0");
-
-		await page.click("#increment");
-
-		count = await page.$eval("#count", (el) => el.textContent);
-		assert.equal(count, "1");
+		await _runTestImpl();
+		await _runTestImpl(true);
 	}
 
 	before(async () => {

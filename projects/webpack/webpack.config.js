@@ -31,6 +31,12 @@ export default {
 			},
 		],
 	},
+	resolve: {
+		alias: {
+			react: "preact/compat",
+			"react-dom": "preact/compat",
+		},
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			title: "Preact built with Webpack",

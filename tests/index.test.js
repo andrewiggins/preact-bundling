@@ -186,4 +186,9 @@ describe("bundling projects", () => {
 		const url = await startServer("projects/parcel");
 		await runTest("Parcel", url.href);
 	});
+
+	it("webpack works", async () => {
+		const url = await startServer("projects/webpack");
+		await runTest("Webpack", url.href);
+	});
 });

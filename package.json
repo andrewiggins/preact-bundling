@@ -32,7 +32,8 @@
     "tests"
   ],
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "strip-ansi": "^7.1.0"
   },
   "volta": {
     "node": "18.18.0"

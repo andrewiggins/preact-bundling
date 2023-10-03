@@ -56,7 +56,7 @@ describe("bundling projects", () => {
 			server = spawn(
 				process.execPath,
 				[p("./node_modules/sirv-cli/bin.js"), p(projectPath, "dist"), "--dev"],
-				{ cwd: p(projectPath) }
+				{ cwd: p(projectPath) },
 			);
 
 			serverExit = waitForExit(server);
@@ -85,7 +85,7 @@ describe("bundling projects", () => {
 			function onExit(code) {
 				cleanup();
 				reject(
-					new Error("Server unexpectedly exited with error code: " + code)
+					new Error("Server unexpectedly exited with error code: " + code),
 				);
 			}
 

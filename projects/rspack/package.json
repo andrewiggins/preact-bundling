@@ -1,0 +1,17 @@
+{
+  "name": "rspack",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "start": "rspack serve",
+    "build": "rspack build",
+    "serve": "sirv dist"
+  },
+  "dependencies": {
+    "preact": "^10.18.1"
+  },
+  "devDependencies": {
+    "@rspack/cli": "latest"
+  }
+}

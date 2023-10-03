@@ -6,7 +6,7 @@ export default function Counter() {
 	return (
 		<div id="counter-app">
 			<p>
-				Count: <span id="count">{count}</span>
+				<span id="bundler">Vite</span> Count: <span id="count">{count}</span>
 			</p>
 			<button id="increment" onClick={() => setCount(count + 1)}>
 				Increment

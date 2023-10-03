@@ -41,4 +41,4 @@ function Resource(props) {
 	);
 }
 
-render(<App />, document.getElementById("app"));
+render(<App />, document.getElementById("root"));

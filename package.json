@@ -7,7 +7,9 @@
     "test": "node --test tests",
     "test:debug": "cross-env DEBUG=1 node --test tests",
     "lint": "prettier --check --no-error-on-unmatched-pattern **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
-    "lint:fix": "prettier --write --no-error-on-unmatched-pattern **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}"
+    "lint:fix": "prettier --write --no-error-on-unmatched-pattern **/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -35,8 +37,15 @@
   ],
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "strip-ansi": "^7.1.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,css,md,html,yml,yaml,json}": [
+      "prettier --write"
+    ]
   },
   "volta": {
     "node": "18.18.0"

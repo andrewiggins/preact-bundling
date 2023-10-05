@@ -206,4 +206,9 @@ describe("bundling projects", () => {
 		const url = await startServer("projects/rspack");
 		await runTest("Rspack", url.href);
 	});
+
+	it("esbuild works", async () => {
+		const url = await startServer("projects/esbuild");
+		await runTest("esbuild", url.href);
+	});
 });

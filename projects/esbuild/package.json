@@ -1,0 +1,22 @@
+{
+  "name": "esbuild",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "description": "A Preact app built with ESBuild",
+  "main": "src/index.jsx",
+  "scripts": {
+    "start": "concurrently \"sirv dist --dev\" \"node build.js --watch\"",
+    "build": "node build.js",
+    "serve": "sirv dist"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1",
+    "esbuild": "^0.19.4",
+    "rollup": "^3.29.4",
+    "sirv-cli": "^2.0.2"
+  },
+  "dependencies": {
+    "preact": "^10.18.1"
+  }
+}
